@@ -82,14 +82,14 @@ export default function CheckoutModal({
         angle: 60,
         spread: 55,
         origin: { x: 0 },
-        colors: ['#00f2fe', '#9b51e0', '#f8fafc']
+        colors: ['#6366f1', '#ec4899', '#ffffff']
       });
       confetti({
         particleCount: 5,
         angle: 120,
         spread: 55,
         origin: { x: 1 },
-        colors: ['#00f2fe', '#9b51e0', '#f8fafc']
+        colors: ['#6366f1', '#ec4899', '#ffffff']
       });
 
       if (Date.now() < end) {
@@ -334,7 +334,7 @@ export default function CheckoutModal({
               >
                 <div className="summary-row">
                   <span>Order Reference</span>
-                  <span style={{ fontFamily: 'monospace', color: 'var(--primary)' }}>#VTX-{Math.floor(100000 + Math.random() * 900000)}</span>
+                  <span style={{ fontFamily: 'monospace', color: 'var(--primary)' }}>#ZG-{Math.floor(100000 + Math.random() * 900000)}</span>
                 </div>
                 <div className="summary-row">
                   <span>Delivery Address</span>

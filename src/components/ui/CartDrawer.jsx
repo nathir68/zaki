@@ -1,7 +1,6 @@
 import React from 'react';
 import { X, Trash2, ShoppingBag, ArrowRight } from 'lucide-react';
-import { ProductSVGPreview } from './ProductCatalog';
-import { FABRICS } from './ConfiguratorPanel';
+import { ProductSVGPreview, FABRICS } from './ProductCatalog';
 
 export default function CartDrawer({ 
   isOpen, 
@@ -56,11 +55,11 @@ export default function CartDrawer({
             cartItems.map(item => (
               <div key={item.id} className="cart-item animate-fade">
                 {/* SVG Config Preview */}
-                <div className="cart-item-img">
+                <div className="cart-item-img" style={{ background: 'rgba(255,255,255,0.02)', padding: '4px', borderRadius: '8px' }}>
                   <ProductSVGPreview 
                     colors={item.colors} 
-                    isHoodie={item.type === 'hoodie'} 
-                    style={{ width: '56px', height: '56px' }}
+                    type={item.type} 
+                    style={{ width: '48px', height: '48px' }}
                   />
                 </div>
 
@@ -76,13 +75,14 @@ export default function CartDrawer({
                   </button>
 
                   <div className="cart-item-specs">
-                    <span className="spec-pill">{item.type === 'tee' ? 'Tee' : 'Hoodie'}</span>
+                    <span className="spec-pill" style={{ textTransform: 'capitalize' }}>
+                      {item.type === 'tshirt' ? 'T-Shirt' : item.type === 'shorts' ? 'Shorts' : 'Joggers'}
+                    </span>
                     <span className="spec-pill">{getFabricName(item.fabric)}</span>
                     <span className="spec-pill" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                      Color Block: 
+                      Base Color: 
                       <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', backgroundColor: item.colors.body, border: '1px solid rgba(255,255,255,0.2)' }} />
                     </span>
-                    {item.decal && <span className="spec-pill">Graphics Addon</span>}
                   </div>
 
                   <div className="cart-item-price-row">
