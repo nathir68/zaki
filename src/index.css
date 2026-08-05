@@ -374,6 +374,14 @@ h1, h2, h3, h4, h5, h6 {
    ZAKI GARMENTS - MOBILE RESPONSIVENESS & E-COMMERCE ADDITIONS
    ========================================== */
 
+/* Catalog Grid layout on Desktop */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  width: 100%;
+}
+
 /* 3D View Modal Overlay */
 .view-3d-modal-overlay {
   position: fixed;
