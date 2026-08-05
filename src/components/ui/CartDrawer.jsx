@@ -54,13 +54,21 @@ export default function CartDrawer({
           ) : (
             cartItems.map(item => (
               <div key={item.id} className="cart-item animate-fade">
-                {/* SVG Config Preview */}
-                <div className="cart-item-img" style={{ background: 'rgba(255,255,255,0.02)', padding: '4px', borderRadius: '8px' }}>
-                  <ProductSVGPreview 
-                    colors={item.colors} 
-                    type={item.type} 
-                    style={{ width: '48px', height: '48px' }}
-                  />
+                {/* Product Image Preview */}
+                <div className="cart-item-img" style={{ background: 'rgba(255,255,255,0.02)', borderRadius: '8px', overflow: 'hidden', width: '48px', height: '48px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  {item.image ? (
+                    <img 
+                      src={item.image} 
+                      alt={item.name} 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                  ) : (
+                    <ProductSVGPreview 
+                      colors={item.colors} 
+                      type={item.type} 
+                      style={{ width: '40px', height: '40px' }}
+                    />
+                  )}
                 </div>
 
                 {/* Details */}

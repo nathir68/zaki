@@ -246,7 +246,8 @@ export const PRESET_PRODUCTS = [
       hem: '#d8b4fe'
     },
     fabric: 'cotton',
-    decal: LOGO_PRESETS[0].url 
+    decal: LOGO_PRESETS[0].url,
+    image: '/images/dino_tee.jpg'
   },
   {
     id: 'sky-joggers',
@@ -262,7 +263,8 @@ export const PRESET_PRODUCTS = [
       hem: '#f8fafc' 
     },
     fabric: 'jersey',
-    decal: null
+    decal: null,
+    image: '/images/sky_joggers.jpg'
   },
   {
     id: 'sunny-day-shorts',
@@ -278,7 +280,8 @@ export const PRESET_PRODUCTS = [
       hem: '#ec4899'
     },
     fabric: 'mesh',
-    decal: null
+    decal: null,
+    image: '/images/sunny_shorts.jpg'
   },
   {
     id: 'space-scout-tee',
@@ -294,7 +297,8 @@ export const PRESET_PRODUCTS = [
       hem: '#bae6fd'
     },
     fabric: 'cotton',
-    decal: LOGO_PRESETS[1].url 
+    decal: LOGO_PRESETS[1].url,
+    image: '/images/space_tee.jpg'
   }
 ];
 
@@ -309,12 +313,12 @@ export default function ProductCatalog({ onSelectProduct, onAddToCart }) {
   };
 
   const handleEditClick = (product) => {
-    // Load product specs into the 3D Modal viewer
     onSelectProduct({
       type: product.type,
       colors: { ...product.colors },
       fabric: product.fabric,
       decal: product.decal,
+      image: product.image,
       decalScale: 0.28,
       decalPosition: { x: 0, y: 0 }
     });
@@ -338,6 +342,7 @@ export default function ProductCatalog({ onSelectProduct, onAddToCart }) {
       fabric: product.fabric,
       fabricName: fabricNames[product.fabric] || 'Organic Cotton',
       decal: product.decal,
+      image: product.image,
       size: size,
       quantity: 1
     });
@@ -359,11 +364,20 @@ export default function ProductCatalog({ onSelectProduct, onAddToCart }) {
         {PRESET_PRODUCTS.map(product => (
           <div key={product.id} className="titanium-card product-card" style={{ padding: '20px', borderRadius: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             
-            <div className="product-image-container" style={{ background: 'radial-gradient(circle at center, #171830 0%, #080914 100%)', borderRadius: '12px', height: '180px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <span className="tag-badge" style={{ backgroundColor: 'rgba(99,102,241,0.15)', color: 'var(--primary)', border: '1px solid rgba(99,102,241,0.3)', top: '12px', left: '12px' }}>
+            <div className="product-image-container" style={{ background: '#0e0e0f', borderRadius: '12px', height: '180px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', position: 'relative' }}>
+              <span className="tag-badge" style={{ backgroundColor: 'rgba(239,68,68,0.15)', color: 'var(--primary)', border: '1px solid rgba(239,68,68,0.3)', top: '12px', left: '12px', zIndex: 10 }}>
                 {product.tag}
               </span>
-              <ProductSVGPreview colors={product.colors} type={product.type} style={{ height: '120px', width: '120px' }} />
+              {product.image ? (
+                <img 
+                  src={product.image} 
+                  alt={product.name} 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s ease' }} 
+                  className="catalog-product-img"
+                />
+              ) : (
+                <ProductSVGPreview colors={product.colors} type={product.type} style={{ height: '120px', width: '120px' }} />
+              )}
             </div>
 
             <div className="product-details" style={{ marginTop: '16px' }}>

@@ -137,6 +137,7 @@ export default function App() {
       fabric: activePreviewProduct.fabric,
       fabricName: fabricNames[activePreviewProduct.fabric] || 'Organic Cotton',
       decal: activePreviewProduct.decal,
+      image: activePreviewProduct.image,
       size: previewSize,
       quantity: 1
     };
@@ -174,6 +175,7 @@ export default function App() {
       colors: { ...preset.colors },
       fabric: preset.fabric,
       decal: decalUrl,
+      image: preset.image,
       decalScale: preset.decalScale || 0.28,
       decalPosition: preset.decalPosition || { x: 0, y: 0 }
     });
@@ -481,7 +483,7 @@ export default function App() {
                   zIndex: 1
                 }} />
                 
-                {/* Showcase SVG icons arranged in a premium 2x2 grid */}
+                {/* Showcase real images arranged in a premium 2x2 grid */}
                 <div style={{ 
                   display: 'grid', 
                   gridTemplateColumns: 'repeat(2, 1fr)', 
@@ -492,35 +494,35 @@ export default function App() {
                   justifyItems: 'center',
                   marginBottom: '20px'
                 }}>
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', background: 'rgba(255,255,255,0.01)', border: '1px solid rgba(255,255,255,0.03)', padding: '8px', borderRadius: '10px', width: '100%' }}>
-                    <ProductSVGPreview 
-                      colors={{ body: '#a7f3d0', sleeves: '#d8b4fe', collar: '#ec4899', hem: '#d8b4fe' }} 
-                      type="tshirt" 
-                      style={{ width: '70px', height: '70px', filter: 'drop-shadow(0 6px 12px rgba(0,0,0,0.3))' }} 
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', padding: '6px', borderRadius: '10px', width: '100%', overflow: 'hidden' }}>
+                    <img 
+                      src="/images/dino_tee.jpg" 
+                      alt="Explorer Tee" 
+                      style={{ width: '70px', height: '70px', objectFit: 'cover', borderRadius: '6px', filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))' }} 
                     />
                     <span style={{ fontSize: '0.6rem', color: 'var(--text-muted)', fontWeight: 'bold' }}>EXPLORER TEE</span>
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', background: 'rgba(255,255,255,0.01)', border: '1px solid rgba(255,255,255,0.03)', padding: '8px', borderRadius: '10px', width: '100%' }}>
-                    <ProductSVGPreview 
-                      colors={{ body: '#fef08a', waistband: '#ec4899', stripes: '#ffffff', hem: '#ec4899' }} 
-                      type="shorts" 
-                      style={{ width: '70px', height: '70px', filter: 'drop-shadow(0 6px 12px rgba(0,0,0,0.3))' }} 
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', padding: '6px', borderRadius: '10px', width: '100%', overflow: 'hidden' }}>
+                    <img 
+                      src="/images/sunny_shorts.jpg" 
+                      alt="Play Shorts" 
+                      style={{ width: '70px', height: '70px', objectFit: 'cover', borderRadius: '6px', filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))' }} 
                     />
                     <span style={{ fontSize: '0.6rem', color: 'var(--text-muted)', fontWeight: 'bold' }}>PLAY SHORTS</span>
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', background: 'rgba(255,255,255,0.01)', border: '1px solid rgba(255,255,255,0.03)', padding: '8px', borderRadius: '10px', width: '100%' }}>
-                    <ProductSVGPreview 
-                      colors={{ body: '#6366f1', waistband: '#1e1b4b', stripes: '#ffffff', hem: '#f8fafc' }} 
-                      type="trackpants" 
-                      style={{ width: '70px', height: '70px', filter: 'drop-shadow(0 6px 12px rgba(0,0,0,0.3))' }} 
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', padding: '6px', borderRadius: '10px', width: '100%', overflow: 'hidden' }}>
+                    <img 
+                      src="/images/sky_joggers.jpg" 
+                      alt="Sky Joggers" 
+                      style={{ width: '70px', height: '70px', objectFit: 'cover', borderRadius: '6px', filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))' }} 
                     />
                     <span style={{ fontSize: '0.6rem', color: 'var(--text-muted)', fontWeight: 'bold' }}>SKY JOGGERS</span>
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', background: 'rgba(255,255,255,0.01)', border: '1px solid rgba(255,255,255,0.03)', padding: '8px', borderRadius: '10px', width: '100%' }}>
-                    <ProductSVGPreview 
-                      colors={{ body: '#f8fafc', sleeves: '#bae6fd', collar: '#6366f1', hem: '#bae6fd' }} 
-                      type="tshirt" 
-                      style={{ width: '70px', height: '70px', filter: 'drop-shadow(0 6px 12px rgba(0,0,0,0.3))' }} 
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', padding: '6px', borderRadius: '10px', width: '100%', overflow: 'hidden' }}>
+                    <img 
+                      src="/images/space_tee.jpg" 
+                      alt="Space Tee" 
+                      style={{ width: '70px', height: '70px', objectFit: 'cover', borderRadius: '6px', filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))' }} 
                     />
                     <span style={{ fontSize: '0.6rem', color: 'var(--text-muted)', fontWeight: 'bold' }}>SPACE TEE</span>
                   </div>
@@ -795,22 +797,32 @@ export default function App() {
             </div>
 
             {/* Modal 2D Body Graphic */}
-            <div className="view-3d-modal-body" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <div style={{
-                position: 'absolute',
-                width: '280px',
-                height: '280px',
-                borderRadius: '50%',
-                background: 'radial-gradient(circle, rgba(239,68,68,0.18) 0%, transparent 70%)',
-                filter: 'blur(8px)',
-                zIndex: 1
-              }} />
-              
-              <ProductSVGPreview 
-                colors={activePreviewProduct.colors} 
-                type={activePreviewProduct.type} 
-                style={{ width: '200px', height: '200px', zIndex: 2, filter: 'drop-shadow(0 20px 30px rgba(0,0,0,0.4))' }}
-              />
+            <div className="view-3d-modal-body" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+              {activePreviewProduct.image ? (
+                <img 
+                  src={activePreviewProduct.image} 
+                  alt="Product Details Preview" 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+              ) : (
+                <>
+                  <div style={{
+                    position: 'absolute',
+                    width: '280px',
+                    height: '280px',
+                    borderRadius: '50%',
+                    background: 'radial-gradient(circle, rgba(239,68,68,0.18) 0%, transparent 70%)',
+                    filter: 'blur(8px)',
+                    zIndex: 1
+                  }} />
+                  
+                  <ProductSVGPreview 
+                    colors={activePreviewProduct.colors} 
+                    type={activePreviewProduct.type} 
+                    style={{ width: '200px', height: '200px', zIndex: 2, filter: 'drop-shadow(0 20px 30px rgba(0,0,0,0.4))' }}
+                  />
+                </>
+              )}
             </div>
 
             {/* Modal E-Commerce Footer */}
