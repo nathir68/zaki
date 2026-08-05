@@ -365,7 +365,7 @@ export default function ProductCatalog({ onSelectProduct, onAddToCart }) {
           <div key={product.id} className="titanium-card product-card" style={{ padding: '20px', borderRadius: '16px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             
             <div className="product-image-container" style={{ background: '#0e0e0f', borderRadius: '12px', width: '100%', aspectRatio: '1 / 1', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', position: 'relative' }}>
-              <span className="tag-badge" style={{ backgroundColor: 'rgba(239,68,68,0.15)', color: 'var(--primary)', border: '1px solid rgba(239,68,68,0.3)', top: '12px', left: '12px', zIndex: 10 }}>
+              <span className="tag-badge" style={{ position: 'absolute', backgroundColor: 'rgba(239,68,68,0.15)', color: 'var(--primary)', border: '1px solid rgba(239,68,68,0.3)', top: '12px', left: '12px', zIndex: 10 }}>
                 {product.tag}
               </span>
               {product.image ? (
