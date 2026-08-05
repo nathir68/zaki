@@ -454,14 +454,13 @@ export default function App() {
                   </button>
                 </div>
               </div>
-
-              {/* Hero Right: 2D Kids Apparel Showcase Grid Collage */}
+              {/* Hero Right Showcase */}
               <div 
-                className="titanium-card" 
+                className="titanium-card hero-showcase-card"
                 style={{ 
-                  height: '420px', 
-                  position: 'relative', 
-                  overflow: 'hidden', 
+                  height: '420px',
+                  position: 'relative',
+                  overflow: 'hidden',
                   background: 'radial-gradient(circle at center, #111111 0%, #000000 100%)',
                   border: '1px solid rgba(239, 68, 68, 0.25)',
                   display: 'flex',
