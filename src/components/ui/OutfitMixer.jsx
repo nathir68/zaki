@@ -12,13 +12,14 @@ const OUTFITS = {
     loadout: {
       type: 'shorts',
       colors: {
-        body: '#fef08a', // Sunshine Yellow
-        waistband: '#6366f1', // Indigo
+        body: '#fef08a', 
+        waistband: '#ec4899', 
         stripes: '#ffffff',
-        hem: '#ec4899' // Pink trim
+        hem: '#ec4899'
       },
       fabric: 'mesh',
-      decal: null
+      decal: null,
+      image: '/images/sunny_shorts.jpg'
     },
     tips: [
       'Stain-resistant fabric blends',
@@ -36,13 +37,14 @@ const OUTFITS = {
     loadout: {
       type: 'tshirt',
       colors: {
-        body: '#f8fafc', // Cloud White
-        sleeves: '#bae6fd', // Sky Breeze
-        collar: '#6366f1', // Indigo
+        body: '#f8fafc', 
+        sleeves: '#bae6fd', 
+        collar: '#6366f1', 
         hem: '#bae6fd'
       },
       fabric: 'cotton',
-      decal: 'rocket'
+      decal: 'rocket',
+      image: '/images/space_tee.jpg'
     },
     tips: [
       'Ultra-soft premium cotton base',
@@ -60,13 +62,14 @@ const OUTFITS = {
     loadout: {
       type: 'trackpants',
       colors: {
-        body: '#d8b4fe', // Lavender Dream
-        waistband: '#1e1b4b', // Deep Blue
-        stripes: '#cbd5e1', // Light grey
-        hem: '#1e1b4b'
+        body: '#6366f1', 
+        waistband: '#1e1b4b', 
+        stripes: '#ffffff',
+        hem: '#f8fafc' 
       },
       fabric: 'fleece',
-      decal: null
+      decal: null,
+      image: '/images/sky_joggers.jpg'
     },
     tips: [
       'Tag-free comfort lining',
@@ -85,9 +88,6 @@ export default function OutfitMixer({ onLoadOutfit }) {
     // Determine decal URL based on loadout presets
     let decalUrl = null;
     if (currentOutfit.loadout.decal === 'rocket') {
-      // Find rocket logo URL
-      // (ConfiguratorPanel LOGO_PRESETS is loaded dynamically in App, we will pass presets down or map them here)
-      // Let's resolve the decal URL in App.jsx when this is called, or set it directly.
       decalUrl = 'rocket'; // App.jsx will intercept and load the actual rocket logo URL
     }
     
@@ -96,6 +96,7 @@ export default function OutfitMixer({ onLoadOutfit }) {
       colors: { ...currentOutfit.loadout.colors },
       fabric: currentOutfit.loadout.fabric,
       decal: decalUrl,
+      image: currentOutfit.loadout.image,
       decalScale: 0.28,
       decalPosition: { x: 0, y: 0 }
     });
